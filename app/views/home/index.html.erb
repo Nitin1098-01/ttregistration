@@ -1,0 +1,38 @@
+<!--Home Page-->
+
+
+
+<% if user_signed_in? %>
+<div class="aftersignin">
+<h1 class="heading">Welcome </h1>
+
+<%= link_to "Signout", destroy_user_session_path,method: :delete %>
+<%
+=begin%>
+ <%= link_to "Book", 'calender/index' %> 
+<%
+=end%>
+
+
+ <%= render template: "calender/index"%> 
+
+
+</div>
+
+<% else %>
+<div class="beforesignin">
+
+<h1 class="heading">Welcome </h1>
+<br>
+<div class="buttons">
+<div class="signinbutton"><%= link_to "Sign in", new_user_session_path %></div>
+
+<div class="signupbutton"><%= link_to "Sign up", new_user_registration_path %></div>
+</div>
+</div>
+<% end %>
+
+
+
+
+

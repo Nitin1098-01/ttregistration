@@ -1,0 +1,4 @@
+<%= week_calendar number_of_weeks: 1 do |date| %>
+  <%=link_to date, new_booking_path(:date =>date)%> <br>
+  <%=link_to 'Check Availability', available_booking_path(:date =>date)%>  
+<% end %>
